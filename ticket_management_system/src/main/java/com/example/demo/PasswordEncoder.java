@@ -12,4 +12,9 @@ public class PasswordEncoder {
 		
 		System.out.println(encodedPassword);
 	}
+
+	public String encode(String string) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

@@ -19,35 +19,28 @@ public class TicketRepositoryTests {
     private TestEntityManager entityManager;
      
     @Autowired
-    private TicketRepository trepo;
+    private TicketRepository ticketrepository;
     
     @Test
     public void testCreateTicket() {
         Tickets ticket = new Tickets();
-        ticket.setCustomer_id(001);
-        ticket.setFirstName("Jane");
+        ticket.setCustomer_id(002);
+        ticket.setFirstName("Helen");
         ticket.setLastName("Sloan");
         ticket.setCategory("Query");
         ticket.setDescription("When will the service resume?");
-        /*ticket.setDateOfLogging('2014-01-18');
-        ticket.setDateOfResolution('2014-01-21');*/
         ticket.setStatus("Resolved");
+        ticket.setCustomerCareExecutive("Anjali Deswal");
+        ticket.setTicket_id((long) 1);
+        ticket.setRemarks("fixed");
+        ticket.setId((long) 1);
         
         
-        Tickets savedTicket = trepo.save(ticket);
+        
+        Tickets savedTicket = ticketrepository.save(ticket);
         
         Tickets existTicket = entityManager.find(Tickets.class, savedTicket.getTicket_id());
         
         assertThat(ticket.getCustomer_id()).isEqualTo(existTicket.getCustomer_id());
     }
-    
-    /*@Test
-    public void testFindUserByEmail() {
-    	String email = "anjali@gmail.com";
-    	
-    	User user  = repo.findByEmail(email);
-    	
-    	assertThat(user).isNotNull();
-    	
-    }*/
 }

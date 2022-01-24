@@ -1,13 +1,12 @@
 package com.example.demo;
 
-//import java.util.function.IntPredicate;
-
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
 import javax.persistence.Table;
 
 @Entity
@@ -31,7 +30,7 @@ public class User {
     
     @Column(name = "user_type", nullable = false, length = 45)
     private String userType;
-
+     
     public Long getId() {
 		return id;
 	}

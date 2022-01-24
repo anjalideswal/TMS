@@ -21,7 +21,7 @@
 			<h1>Raise Ticket</h1>
 		</div>
 		<form th:action="@{/raiseTicket}" th:object="${ticket}"
-			method="post" style="max-width: 600px; margin: 0 auto;">
+			method="post" style="max-width: 600px; margin: 0 auto;" enctype="multipart/form-data">
 		<div class="m-3">			
 			<div class="form-group row">
 				<label class="col-4 col-form-label">First Name: </label>
@@ -47,6 +47,11 @@
 				</div>
 			</div>
 			
+			<div>
+				<label>Image for reference (if any): </label>
+    				<input type="file" name="image" accept="image/png, image/jpeg" />
+     		</div>
+			
 			<div class="form-group row">
 				<label class="col-4 col-form-label">Customer ID: </label>
 				<div class="col-8">
@@ -65,9 +70,7 @@
 				</select>
 				</div>
 			</div>
-			
-			<input type="hidden" id="id" name="id" th:field="*{id}" th:value="${id}">	
-			
+
 			<div>
 				<button type="submit" class="btn btn-primary">Submit</button> 
 			</div>

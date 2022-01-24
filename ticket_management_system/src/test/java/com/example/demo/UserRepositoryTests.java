@@ -29,6 +29,7 @@ public class UserRepositoryTests {
         user.setFirstName("Abc");
         user.setLastName("Def");
         user.setUserType("Customer Care Executive");
+  
         
         User savedUser = repo.save(user);
         
